@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Phillips' Employee Web</title>
+        <title>faceBase</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="mystyle.css">
     </head>
     <body>
-        <h1><a href="home.html">SuperStar Healthcare</a></h1>
+        <h1><a href="home.html">FaceBase</a></h1>
         <h2>Patient Report</h2>
         <%
             List<Face> mydata = (List<Face>) request.getAttribute("mydata");

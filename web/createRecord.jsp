@@ -19,18 +19,20 @@
     <body>
         <h1><a href="home.html">FaceBase</a></h1>
         <h2>Create New Face Record</h2>
+        <p><b>*HEADS UP: <i>The feature rows below should be submitted as -exactly- five characters,
+                and will be displayed as the five spaces between the sides of the face.</i></b></p>
         <form action="create" method="get">
 
-            Email: <input type="text" name="name" size="20" placeholder="Enter name" required>
+            Character's Name: <input type="text" name="name" size="20" placeholder="Enter name" required>
             <br><br>
             <input type="hidden" name="rating" value="50">
-            Date: <input type="text" name="eyebrowRow" size="5" placeholder="brow" required>
+            Eyebrow Row*: <input type="text" name="eyebrowRow" size="5" placeholder="brow" pattern="^[\W\w]{5}$" required>
             <br><br>
-            Event: <input type="text" name="eyeRow" size="5" placeholder="eyes" required>
+            Eye Row*: <input type="text" name="eyeRow" size="5" placeholder="eyes" pattern="^[\W\w]{5}$" required>
             <br><br>
-            Health: <input type="text" name="mouthRow" size="5" placeholder="mouth" required>
+            Mouth Row*: <input type="text" name="mouthRow" size="5" placeholder="mouth" pattern="^[\W\w]{5}$" required>
             <br><br>
-            Notes: <input type="text" name="quote" size="60" placeholder="Quote or Blurb" required>
+            Quote: <input type="text" name="quote" size="60" placeholder="Quote or Blurb" required>
             <br><br>
             
 
