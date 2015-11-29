@@ -8,16 +8,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Supermassive Carestar Health</title>
+        <title>faceBase</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="mystyle.css">
     </head>
     <body>
-        <h1><a href="home.html">StarHealth</a></h1>
-        <h2>Update Patient-User Record</h2>
+        <h1><a href="home.html">FaceBase</a></h1>
+        <h2>Update A Face</h2>
         <form action="update" method="get">
-            Record number: <input type="number" name="userId" placeholder="Record id to update" required>
+            Record number: <input type="number" name="faceId" placeholder="Record id to update" required>
             <br><br>
 
             <input type="hidden" name="action" value="updateRecord1">

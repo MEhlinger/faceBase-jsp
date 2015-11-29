@@ -50,41 +50,41 @@ public class Controller extends HttpServlet {
             url = "/home.html";
 
         } else if (action.equalsIgnoreCase("createRecord")) {
-            int bloodSugar;
+            int rating;
 
             // get parameters passed in from the request
-            String email = request.getParameter("email");
-            String bloodSugarString = request.getParameter("bloodSugar");
-            String date = request.getParameter("date");
-            String event = request.getParameter("event");
-            String health = request.getParameter("health");
-            String notes = request.getParameter("notes");
+            String name = request.getParameter("name");
+            String ratingString = request.getParameter("rating");
+            String eyebrowRow = request.getParameter("eyebrowRow");
+            String eyeRow = request.getParameter("eyeRow");
+            String mouthRow = request.getParameter("mouthRow");
+            String quote = request.getParameter("quote");
             
 
             // validate and convert salary string into a double
-            if (bloodSugarString == null || bloodSugarString.isEmpty()) {
-                bloodSugar = 0;
+            if (ratingString == null || ratingString.isEmpty()) {
+                rating = 0;
             } else {
-                bloodSugar = Integer.parseInt(bloodSugarString);
+                rating = Integer.parseInt(ratingString);
             }
 
             // store data in an Face object
-            Face patient = new Face(0, email, bloodSugar, date, event, health, notes);
+            Face face = new Face(0, name, rating, eyebrowRow, eyeRow, mouthRow, quote);
 
             // validate the parameters
-            if (email == null || bloodSugarString == null || date == null
-                    || event == null || health == null || notes == null || email.isEmpty()
-                    || bloodSugarString.isEmpty() || date.isEmpty() ||  event.isEmpty() 
-                    || health.isEmpty() || notes.isEmpty()) {
+            if (name == null || ratingString == null || eyebrowRow == null
+                    || eyeRow == null || mouthRow == null || quote == null || name.isEmpty()
+                    || ratingString.isEmpty() || eyebrowRow.isEmpty() ||  eyeRow.isEmpty() 
+                    || mouthRow.isEmpty() || quote.isEmpty()) {
                 url = "/createRecord.jsp";
             } else {
                 // insert this data record into the database
-                DAOSQLite.createRecord(patient, dbPath);
+                DAOSQLite.createRecord(face, dbPath);
                 url = "/home.html";
             }
 
             // add the user object to the request object so that the data is available on the next page
-            request.setAttribute("patient", patient);
+            request.setAttribute("face", face);
             
         } else if (action.equalsIgnoreCase("report")) {
             List<Face> mydata = null;
@@ -93,56 +93,56 @@ public class Controller extends HttpServlet {
             url = "/displayRecords.jsp";
 
         } else if (action.equalsIgnoreCase("updateRecord1")) {
-            String idString = request.getParameter("userId");
+            String idString = request.getParameter("faceId");
             if (idString == null || idString.isEmpty()) {
                 url = "/updateRecord1.jsp";
             } else {
-                // get patient
-                Face patient = DAOSQLite.retrieveRecordById(Integer.parseInt(idString), dbPath);
-                request.setAttribute("patient", patient);
+                // get face
+                Face face = DAOSQLite.retrieveRecordById(Integer.parseInt(idString), dbPath);
+                request.setAttribute("face", face);
                 url = "/updateRecord2.jsp";
             }
 
         } else if (action.equalsIgnoreCase("updateRecord2")) {
-            int userId;
-            int bloodSugar;
+            int faceId;
+            int rating;
 
             // get parameters passed in from the request
-            String userIdString = request.getParameter("userId");
-            String email = request.getParameter("email");
-            String bloodSugarString = request.getParameter("bloodSugar");
-            String date = request.getParameter("date");
-            String event = request.getParameter("event");
-            String health = request.getParameter("health");
-            String notes = request.getParameter("notes");
+            String faceIdString = request.getParameter("faceId");
+            String name = request.getParameter("name");
+            String ratingString = request.getParameter("rating");
+            String eyebrowRow = request.getParameter("eyebrowRow");
+            String eyeRow = request.getParameter("eyeRow");
+            String mouthRow = request.getParameter("mouthRow");
+            String quote = request.getParameter("quote");
 
             // validate and convert empId string into an int
-            if (userIdString == null || userIdString.isEmpty()) {
-                userId = 0;
+            if (faceIdString == null || faceIdString.isEmpty()) {
+                faceId = 0;
             } else {
-                userId = Integer.parseInt(userIdString);
+                faceId = Integer.parseInt(faceIdString);
             }
 
             // validate and convert salary string into a double
-            if (bloodSugarString == null || bloodSugarString.isEmpty()) {
-                bloodSugar = 0;
+            if (ratingString == null || ratingString.isEmpty()) {
+                rating = 0;
             } else {
-                bloodSugar = Integer.parseInt(bloodSugarString);
+                rating = Integer.parseInt(ratingString);
             }
 
             // store data in an Face object
             // store data in an Face object
-            Face patient = new Face(userId, email, bloodSugar, date, event, health, notes);
+            Face face = new Face(faceId, name, rating, eyebrowRow, eyeRow, mouthRow, quote);
 
             // validate the parameters
-            if (userIdString == null || email == null || bloodSugarString == null || date == null
-                    || event == null || health == null || notes == null || email.isEmpty()
-                    || bloodSugarString.isEmpty() || date.isEmpty() ||  event.isEmpty() 
-                    || health.isEmpty() || notes.isEmpty() || userIdString.isEmpty()) {
+            if (faceIdString == null || name == null || ratingString == null || eyebrowRow == null
+                    || eyeRow == null || mouthRow == null || quote == null || name.isEmpty()
+                    || ratingString.isEmpty() || eyebrowRow.isEmpty() ||  eyeRow.isEmpty() 
+                    || mouthRow.isEmpty() || quote.isEmpty() || faceIdString.isEmpty()) {
                 url = "/createRecord.jsp";
             } else {
                 // insert this data record into the database
-                DAOSQLite.updateRecord(patient, dbPath);
+                DAOSQLite.updateRecord(face, dbPath);
                 url = "/home.html";
             }
 

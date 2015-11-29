@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Healthcare for Superstars</title>
+        <title>faceBase</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="mystyle.css">
     </head>
     <body>
-        <h1><a href="home.html">Patient Web Healthcare</a></h1>
-        <h2>Delete Patient Record</h2>
+        <h1><a href="home.html">FaceBase</a></h1>
+        <h2>Delete Face Record</h2>
         <form action="delete" method="post">
             Record number: <input type="number" name="id" placeholder="Record id to delete" required>
             <br><br>

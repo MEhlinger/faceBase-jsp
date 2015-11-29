@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Superfantastic Healthcare</title>
+        <title>faceBase</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="mystyle.css">
@@ -17,21 +17,20 @@
         <script src="//code.jquery.com/jquery-1.10.2.js"> </script>
     </head>
     <body>
-        <h1><a href="home.html">Patient Superstar HealthWeb</a></h1>
-        <h2>Create New Patient Record</h2>
+        <h1><a href="home.html">FaceBase</a></h1>
+        <h2>Create New Face Record</h2>
         <form action="create" method="get">
 
-            Email: <input type="text" name="email" size="30" placeholder="Enter email" required>
+            Email: <input type="text" name="name" size="20" placeholder="Enter name" required>
             <br><br>
-            BloodSugar: <input type="number" name="bloodSugar" placeholder="Blood Sugar" required>
-            <br><br>       
-            Date: <input type="text" name="date" size="8" placeholder="format as yyyymmdd" required>
+            <input type="hidden" name="rating" value="50">
+            Date: <input type="text" name="eyebrowRow" size="5" placeholder="brow" required>
             <br><br>
-            Event: <input type="text" name="event" size="30" placeholder="Inciting Incident" required>
+            Event: <input type="text" name="eyeRow" size="5" placeholder="eyes" required>
             <br><br>
-            Health: <input type="text" name="health" size="30" placeholder="Health Status" required>
+            Health: <input type="text" name="mouthRow" size="5" placeholder="mouth" required>
             <br><br>
-            Notes: <input type="text" name="notes" size="30" placeholder="Other Notes..." required>
+            Notes: <input type="text" name="quote" size="60" placeholder="Quote or Blurb" required>
             <br><br>
             
 
