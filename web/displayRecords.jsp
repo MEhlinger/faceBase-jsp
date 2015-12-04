@@ -16,7 +16,7 @@
     </head>
     <body>
         <h1><a href="home.html">FaceBase</a></h1>
-        <h2>Patient Report</h2>
+        <h2>Your Face Collection</h2>
         <%
             List<Face> mydata = (List<Face>) request.getAttribute("mydata");
             out.println("<table>");
